@@ -92,7 +92,7 @@ ul {list-style-type: none;}
 .days li {
   font-size: 20;
   padding-top: 5px;
-  padding-bottom: 5px;  
+  padding-bottom: 5px;
   list-style-type: none;
   justify-content: center;
   align-content: center;
@@ -130,35 +130,36 @@ ul {list-style-type: none;}
 }
 
 .schedule > div {
-  display: block;
   width: 95%;
 }
 
-.suggest-element, .sequence-element, .schedule-event {
+
+.schedule-event {
   display: flex;
   margin-bottom: 5px;
   width: 100%;
+  color: rgba(255, 255, 255, 90%);
+  background-color: rgba(255, 255, 255, 10%);
+  border-radius: 5px;
+  flex-flow: row nowrap;
+}
+
+.date {
+  padding: 20px;
+  justify-content: center;
+  align-content: flex-start;
+  border-right-style: solid;
+  border-right-color: rgba(255, 255, 255, 10%);
+}
+.event-content{
   padding-top: 20px;
   padding-bottom: 20px;
+  flex-grow: 2; 
+  text-align: center;
   justify-content: center;
   align-content: center;
-  color: rgba(255, 255, 255, 90%);
-}
-
-.suggest-element {
-  background-color: rgba(255, 0, 0, 30%);
-  border-radius: 5px;
-}
-
-.sequence-element {
-  background-color: rgba(255, 255, 255, 10%);
-  border-radius: 5px;
-  border-color: rgba(200, 0, 0, 90%);
-}
-
-.schedule-event {
-  background-color: rgba(255, 255, 255, 10%);
-  border-radius: 5px;
+  border-right-style: solid;
+  border-right-color: rgba(255, 255, 255, 10%);
 }
 
 
