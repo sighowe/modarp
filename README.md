@@ -1,6 +1,3 @@
 # modarp
-Offline Study Application
 
-SYSTEM REQUIREMENTS:
-
-Node.js
+Interactive Deadline-Oriented Notebook

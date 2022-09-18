@@ -1,0 +1,47 @@
+.container {
+  display: grid;
+  grid-template-columns: 4fr 7fr;
+  grid-template-rows: 5fr 4fr;
+  grid-gap: 10px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.container > div {
+  font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+.calendar {
+  grid-area: 1/1/1/1;
+  background-color: red;
+}
+.notebook {
+  grid-area: 1/2/span 2/2;
+  background-color: blue;
+}
+.schedule {
+  grid-area: 2/1/2/1;
+  background-color: green;
+  overflow-y:auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+
+}
+.schedule-event {
+  background-color: darkgreen;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
