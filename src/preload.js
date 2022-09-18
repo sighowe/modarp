@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
   //Initialise variables
   let notePadContent = "";
+  let currentPage = 1;
 
   //find and label all relevant site content
   var notePad = new Quill('#notepad', {
@@ -18,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function(){
         [{ list: 'ordered' }, { list: 'bullet' }]
       ]
     },
-    placeholder: 'WELCOME TO YOUR NOTEBOOK, WRITE SOMETHING HERE!',
+    placeholder: 'THIS PAGE IS EMPTY, WRITE SOMETHING HERE!',
     theme: 'snow'
   });
   let saveButton = document.getElementById("saveButton");
@@ -30,11 +31,34 @@ document.addEventListener('DOMContentLoaded', function(){
   //Add functionality to saveButton
   saveButton.addEventListener("click", () => {
     let notePadContent = notePad.getContents();
-    ipcRenderer.send("saveText", JSON.stringify(notePad.getContents()));
-  })
+    ipcRenderer.send("saveText", currentPage, JSON.stringify(notePad.getContents()));
+  });
 
-  //Add functionality to loadButton
-  //// TODO:
+  //Add functionality to nextButton
+  nextButton.addEventListener("click", () =>{
+    ipcRenderer.send("saveText", currentPage, JSON.stringify(notePad.getContents()));
+    currentPage ++;
+    ipcRenderer.send("loadText", currentPage);
+  });
+
+
+  //Add load functionality
+  prevButton.addEventListener("click", () =>{
+    ipcRenderer.send("saveText", currentPage, JSON.stringify(notePad.getContents()));
+    if(currentPage > 1){
+      currentPage --;
+    }
+    ipcRenderer.send("loadText", currentPage);
+  });
+
+
+  ipcRenderer.on("recieveText", (event, data) => {
+    notePad.setContents(data);
+    console.log(data);
+  });
+
+  //Initialize Notebook content
+  ipcRenderer.send("loadText", currentPage);
 
 
 });

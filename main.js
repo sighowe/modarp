@@ -22,39 +22,44 @@ app.whenReady().then(() => {
     if (BrowserWindow.getAllWindows().length === 0) {
       createWindow();
     }});
-});
 
 
 
 
-//Handle Element events
+
+
+    //Handle Element events
 
   //Default page is page 1 of default notebook
-  let currentFile = "./usernotes/default/1.json";
+  let currentFile = "./usernotes/default/";
 
   //Save info
-  ipcMain.on("saveText", (event, data) => {
-    fs.writeFile(currentFile, data, (err) =>{
-      if(!err){
-      }
-      else {
+  ipcMain.on("saveText", (event, page, data) => {
+    fs.writeFile(currentFile + page + ".json", data, (err) =>{
+      if(err){
         console.log(err);
       }
     });
   });
+    //Read info
+    ipcMain.on("loadText", (event, page) => {
+      //MAKE NEW FILE IF DNE
+      fs.exists(currentFile + page + ".json", (exists) => {
+        if(!exists){
+          fs.writeFile(currentFile + page + ".json", '', (err, data) => {
+      })}});
+      //read file and return information
+      let rawData = fs.readFileSync(currentFile + page + ".json");
+      win.webContents.send("recieveText", JSON.parse(rawData));
+    });
 
-  //Read info
-
-    // TODO
 
     //Change file
     ipcMain.on("changeFile", (event, data) => {
       currentFile = data;
       console.log("CurrentFile Changed to " + data);
     });
-
-
-
+});
 
 
 
