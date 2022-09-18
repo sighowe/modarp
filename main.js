@@ -1,7 +1,7 @@
 //Import libraries
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
-const { ipcMain } = require('electron');
+var fs = require('fs');
 
 //Create the ModuleManager module
 
@@ -16,8 +16,6 @@ app.whenReady().then(() => {
     },
   });
   //Event handlers to send information to front-end
-  ipcMain.handle('PING', () => 'PONG');
-  ipcMain.handle('PONG', () => 'PING');
   //Open html file for display
   win.loadFile('./MODARP.html');
   //Create window and display
@@ -28,6 +26,26 @@ app.whenReady().then(() => {
 
   });
   });
+
+//Handle Element events
+
+//Save
+ipcMain.on("saveText", (event, txtVal) => {
+  fs.writeFile("./text.txt", txtVal.toString(), (err) =>{
+    if(!err){
+      console.log("file saved!");
+    }
+    else {
+      console.log(err);
+    }
+  });
+});
+
+//Load
+
+
+
+
 
 //Handle window close
 app.on('window-all-closed', () => {

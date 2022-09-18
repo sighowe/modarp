@@ -1,23 +1,40 @@
 <html>
+<!--IMPORT DEPENDENCIES-->
+<script src="http://cdn.quilljs.com/1.3.6/quill.js"></script>
 <link rel="stylesheet" href="MODARP.css"></link>
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
 <title>MODARP APPLICATION</title>
 <body>
   <div class="container">
     <div class="calendar">[Calendar]</div>
     <div class="notebook">
+      <div class="notepad" id="notepad">Welcome to your notebook! Type some stuff here!
+      </div>
       <div class="notebook-header">
-        <button>Last Page</button>
-        <button>Next Page</button>
+        <button id="prevButton">Last Page</button>
+        <button id="nextButton">Next Page</button>
+        <button id="saveButton">Save</button>
         <button>Change Notebooks</button>
       </div>
-      <textarea class="notepad">Welcome to your notebook! Type some stuff here!
-      </textarea>
-
-
-
-
     </div>
     <div class="schedule">
+    <div class="schedule-suggest">
+      <div class="suggest-element" background-color="rgba(255, 0, 0)">
+        SUGGEST ELEMENT
+      </div>
+      <div class="schedule-event">
+        REVIEW - L01 NOTES (ーて FORM VERBS)
+      </div>
+      <div class="schedule-event">
+        PRACTICE KANJI ON LMS
+      </div>
+    </div>
+    <hr>
+    <div class="schedule-sequence">
+      <div class="sequence-element" background-color="rgba(255, 0, 0)">
+        SEQUENCE ELEMENT
+      </div>
       <div class="schedule-event">
         Element 1
       </div><div class="schedule-event">
@@ -44,8 +61,11 @@
         Element 12
       </div>
     </div>
+    </div>
   </div>
 
 
 </body>
+
+<script src="MODARP.js"></script>
 </html>

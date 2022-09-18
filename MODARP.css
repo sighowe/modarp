@@ -14,7 +14,7 @@
   margin-bottom: 1%;
   display: grid;
   grid-template-columns: 4fr 7fr;
-  grid-template-rows: 5fr 4fr;
+  grid-template-rows: 4fr 6fr;
   grid-gap: 10px;
   height: 99%;
   padding: 0;
@@ -38,7 +38,6 @@
 .notebook {
   flex-direction: column;
   grid-area: 1/2/span 2/2;
-  background-color: blue;
   margin-bottom: auto;
   justify-content: center;
   align-content: center;
@@ -60,12 +59,43 @@
   overflow-y: auto;
   flex-direction: column;
   grid-template-columns: 100%;
-  }
+}
 
 .schedule > div {
-  margin-bottom: 5px;
   display: block;
   width: 95%;
+}
+
+.suggest-element {
+  margin-bottom: 5px;
+  display: block;
+  width: 100%;
+  padding-top: 20px;
+  background-color: rgba(240, 120, 120, 90%);
+  padding-bottom: 20px;
+  justify-content: center;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: darkgrey;
+}
+
+.sequence-element {
+  margin-bottom: 5px;
+  display: block;
+  width: 100%;
+  padding-top: 20px;
+  background-color: rgba(120, 240, 120, 90%);
+  padding-bottom: 20px;
+  justify-content: center;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: darkgrey;
+}
+
+.schedule-event {
+  margin-bottom: 5px;
+  display: block;
+  width: 100%;
   padding-top: 20px;
   background-color: rgba(240, 240, 240, 90%);
   padding-bottom: 20px;
