@@ -2,17 +2,15 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const { ipcMain } = require('electron');
-const Module = require('./moduleclass.js');
 
 //Create the ModuleManager module
-ModuleManager = new Module(1920, 1080, "./MODARP.html");
 
 
 //Set Window Parameters
 app.whenReady().then(() => {
   const win = new BrowserWindow({
-  width: ModuleManager.getWidth(),
-  height: ModuleManager.getHeight(),
+  width: 1920,
+  height: 1080,
   webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
@@ -21,7 +19,7 @@ app.whenReady().then(() => {
   ipcMain.handle('PING', () => 'PONG');
   ipcMain.handle('PONG', () => 'PING');
   //Open html file for display
-  win.loadFile(ModuleManager.getFile());
+  win.loadFile('./MODARP.html');
   //Create window and display
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
