@@ -1,1 +1,1 @@
-{"ops":[{"insert":"HELLO WORLD\n"}]}
+{"ops":[{"attributes":{"bold":true},"insert":"Stylize things"},{"insert":"\nRegular text\nmango\nded\n"}]}
