@@ -1,7 +1,7 @@
 //import all libraries
 const { contextBridge, ipcRenderer } = require('electron');
 const Quill = require('../node_modules/quill/dist/quill.js');
-
+const CalEvent = require("./calEvent.js");
 
 //Wait for page to load in
 document.addEventListener('DOMContentLoaded', function(){
@@ -12,15 +12,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
   //find and label all relevant site content
   var notePad = new Quill('#notepad', {
-    modules: {
-      toolbar: [
-        ['bold', 'italic'],
-        ['link', 'blockquote', 'code-block', 'image'],
-        [{ list: 'ordered' }, { list: 'bullet' }]
-      ]
-    },
     placeholder: 'THIS PAGE IS EMPTY, WRITE SOMETHING HERE!',
-    theme: 'snow'
+    theme: 'bubble',
   });
   let saveButton = document.getElementById("saveButton");
   let prevButton = document.getElementById("prevButton");

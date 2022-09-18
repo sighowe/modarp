@@ -1,4 +1,11 @@
 
+body {
+  background-image: url('./img/reddoggo.png');
+  background-color: #000000;
+}
+
+
+
 /*         CONTAINER PROPERTIES             */
 .container {
   margin-bottom: 1%;
@@ -8,14 +15,12 @@
   grid-gap: 10px;
   height: 99%;
   padding: 0;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, .15);
+  backdrop-filter: blur(5px);
 }
 .container > div {
-  font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont,
-    "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 30px;
-  text-transform: uppercase;
   align-items: center;
   display: flex;
   padding: 0;
@@ -26,24 +31,90 @@
 .calendar {
   grid-area: 1/1/1/1;
   justify-content: center;
+  flex-direction: column;
 }
-.calendar > img {
+
+ul {list-style-type: none;}
+
+/* Month header */
+.month {
   width: 100%;
-  height: 100%;
+  background-color: rgba(255, 255, 255, 20%);
+  text-align: center;
 }
+/* Month list */
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+.month ul li {
+  background-color: rgba(255, 255, 255, 20%);
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* Previous button inside month header */
+.month .prev {
+  float: left;
+}
+
+/* Next button */
+.month .next {
+  float: right;
+}
+
+/* Weekdays (Mon-Sun) */
+.weekdays {
+  padding: 1%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  background-color: rgba(255, 255, 255, 20%);
+}
+
+.weekdays li {
+  color: rgba(255, 255, 255, 100%);
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+/* Days (1-31) */
+.days {
+  padding: 1%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 5px;
+}
+
+.days li {
+  font-size: 20;
+  padding-top: 5px;
+  padding-bottom: 5px;  
+  list-style-type: none;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 30%);
+}
+
+/* Highlight the "current" day */
+.days li.active {
+  background-color: rgba(255, 0, 0, 40%);
+}
+.days li:hover {
+  background-color: rgba(255, 255, 255, 90%);
+}
+
 
 /*          SCHEDULER ELEMENT          */
 
 /*Scrollbars for Scheduler*/
 .schedule::-webkit-scrollbar {
-    width: 1px;
-}
-.schedule::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-}
-.schedule::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
+  display: none;
 }
 
 .schedule {
@@ -52,6 +123,10 @@
   overflow-y: auto;
   flex-direction: column;
   grid-template-columns: 100%;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, .15);
+  backdrop-filter: blur(10px);
 }
 
 .schedule > div {
@@ -60,29 +135,29 @@
 }
 
 .suggest-element, .sequence-element, .schedule-event {
+  display: flex;
   margin-bottom: 5px;
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
   justify-content: center;
-
+  align-content: center;
+  color: rgba(255, 255, 255, 90%);
 }
 
 .suggest-element {
-  background-color: rgba(200, 0, 0, 90%);
-  justify-content: center;
+  background-color: rgba(255, 0, 0, 30%);
   border-radius: 5px;
-  border-color: rgba(200, 0, 0, 90%);
 }
 
 .sequence-element {
-  background-color: rgba(200, 0, 0, 90%);
+  background-color: rgba(255, 255, 255, 10%);
   border-radius: 5px;
   border-color: rgba(200, 0, 0, 90%);
 }
 
 .schedule-event {
-  background-color: rgba(100, 100, 100, 90%);
+  background-color: rgba(255, 255, 255, 10%);
   border-radius: 5px;
 }
 
@@ -94,13 +169,15 @@
   margin-bottom: auto;
   justify-content: center;
   align-content: center;
-  background-color: white;
 }
 .notepad {
   width: 90%;
   height: 80%;
+  background-color: rgba(255, 255, 255, 10%);
+  backdrop-filter: blur(10px);
+  color: white;
 }
 .notepad-header {
   height: 20%;
-  align-content: center;x
+  align-content: center;
 }
