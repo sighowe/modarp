@@ -189,3 +189,22 @@ ul {list-style-type: none;}
   height: 20%;
   align-content: center;
 }
+button {
+  background-color: rgba(255, 255, 255, 50%);
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+
+button:hover {
+  background-color: rgba(255, 255, 255, 10%);
+  color: white;
+}
