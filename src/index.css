@@ -57,11 +57,13 @@ ul {list-style-type: none;}
 /* Previous button inside month header */
 .month .prev {
   float: left;
+  background: none;
 }
 
 /* Next button */
 .month .next {
   float: right;
+  background: none;
 }
 
 /* Weekdays (Mon-Sun) */

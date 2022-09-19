@@ -69,7 +69,8 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 
   addEvent("deadline", 19, 9, 2022, 23, 59, "Presentation for hackathon", ["default", 1]);
-  addEvent("deadline-completed", 20, 9, 2022, 1, 55, "Japanese writing test", ["default", 1]);
+  addEvent("event", 20, 9, 2022, 1, 55, "Review ーて form notes", ["default", 1]);
+  addEvent("deadline-completed", 19, 9, 2022, 1, 55, "Japanese writing test", ["default", 1]);
 
   //Populate display with all events stored in eventList[]
   for(var x = 0; x < eventList.length; x++){
