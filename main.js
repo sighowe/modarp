@@ -50,7 +50,12 @@ app.whenReady().then(() => {
       })}});
       //read file and return information
       let rawData = fs.readFileSync(currentFile + page + ".json");
-      win.webContents.send("recieveText", JSON.parse(rawData));
+      if(rawData != ""){
+        win.webContents.send("recieveText", JSON.parse(rawData));
+      }
+      else{
+        win.webContents.send("recieveText", null);
+      }
     });
 
 

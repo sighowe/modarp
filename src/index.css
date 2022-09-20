@@ -1,4 +1,6 @@
-
+*::-webkit-scrollbar {
+  display: none;
+}
 body {
   background-image: url('./img/reddoggo.png');
   background-color: #000000;
@@ -33,6 +35,7 @@ body {
   justify-content: center;
   flex-direction: column;
 }
+
 
 ul {list-style-type: none;}
 
@@ -144,6 +147,14 @@ ul {list-style-type: none;}
   background-color: rgba(255, 255, 255, 10%);
   border-radius: 5px;
   flex-flow: row nowrap;
+}
+.schedule-title {
+  text-align: center;
+  margin-bottom: 5px;
+  width: 100%;
+  color: rgba(255, 255, 255, 90%);
+  background-color: rgba(255, 255, 255, 10%);
+  border-radius: 5px;
 }
 .deadline > .date {
   background-color: rgba(255, 0, 0, 10%);
