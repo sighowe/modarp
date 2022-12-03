@@ -6,7 +6,9 @@ body {
   background-color: #000000;
 }
 
-
+* {
+  background-color: rgba(0, 69, 69, 69%)
+}
 
 /*         CONTAINER PROPERTIES             */
 .container {
