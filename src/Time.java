@@ -9,7 +9,6 @@ public class Time {
         year = -1;
         hour = -1;
         minute = -1;
-
     }
     public Time(int day, int month, int year){
         this.day = day;
@@ -53,7 +52,7 @@ public class Time {
         return minute;
     }
     public String toString(){
-        return(hour + ':' + minute + " " + day + '/' + month + '/' + year);
+        return("" + hour + ':' + minute + " " + day + '/' + month + '/' + year);
     }
 
 }

@@ -5,33 +5,33 @@ class Task{
   boolean taskCompleted;
 
   //Constructors
-  public Task(Time scheduleTime){
-    this.scheduleTime = scheduleTime;
+  public Task(Time scheduledTime){
+    this.scheduledTime = scheduledTime;
     taskInfo = "";
     taskCompleted = false;
   }
 
-  public Task(Time scheduleTime, String taskInfo){
-    this.scheduleTime = scheduleTime;
+  public Task(Time scheduledTime, String taskInfo){
+    this.scheduledTime = scheduledTime;
     this.taskInfo = taskInfo;
     taskCompleted = false;
   }
 
   public Task(String taskInfo){
     this.taskInfo = taskInfo;
-    scheduleTime = new Time();
+    scheduledTime = new Time();
     taskCompleted = false;
   }
 
   public Task(){
     taskInfo = "";
-    scheduleTime = new Time();
+    scheduledTime = new Time();
     taskCompleted = false;
   }
 
   //Accessors
   public Time getTime(){
-    return scheduleTime;
+    return scheduledTime;
   }
 
   public String getTaskInfo(){
@@ -39,8 +39,8 @@ class Task{
   }
 
   //Mutators
-  public void setTime(Time scheduleTime){
-    this.scheduleTime = scheduleTime;
+  public void setTime(Time scheduledTime){
+    this.scheduledTime = scheduledTime;
   }
   public void markTaskComplete(){
     taskCompleted = true;
@@ -52,6 +52,6 @@ class Task{
 
   //debugging tools
   public String toString(){
-    return("---\nTask: " + taskInfo + "\nDate: " + scheduleTime + "\n---");
+    return("---\nTask: " + taskInfo + "\nDate: " + scheduledTime + "\n---");
   }
 }
